@@ -29,6 +29,9 @@ public class User {
 	@Column(name = "country", unique = false, nullable = true)
 	protected String country;
 	
+	@Column(name = "image", unique = false, nullable = true)
+	protected String image;
+	
 	@Enumerated(EnumType.STRING)
 	protected Role role;
 	
@@ -36,13 +39,14 @@ public class User {
 		super();
 	}
 
-	public User(Long id, String username, String password, String fullname, String country, Role role) {
+	public User(Long id, String username, String password, String fullname, String country, String image, Role role) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.fullname = fullname;
 		this.country = country;
+		this.image = image;
 		this.role = role;
 	}
 
@@ -84,6 +88,14 @@ public class User {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public Role getRole() {
